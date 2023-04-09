@@ -1,7 +1,12 @@
 <template lang="pug">
-div.padding(v-if="categories").grid
-    div.s6(v-for="category in categories" :key="category.id")
-        article.no-padding
+div.padding(v-if="categories").grid    
+    div(v-for="(category, index) in categories" :key="category.id" :class="index < 3 ? 's4' : 's6'")
+        article.no-padding(v-if="index < 4")
+            img.responsive.medium(:src="category.imageUrl" :alt="category.title")
+            div.absolute.bottom.left.right.padding.bottom-shadow.white-text
+                nav
+                    h5.upper {{ category.title }}
+        article.no-padding(v-if="index >= 4")
             img.responsive.medium(:src="category.imageUrl" :alt="category.title")
             div.absolute.bottom.left.right.padding.bottom-shadow.white-text
                 nav
@@ -43,9 +48,6 @@ const categories = ref([
       "route": 'shop/mens'
     }
 ]);
-
-const msg = ref('Hello, World!')
-
 </script>
 
 <style lang="scss" scoped>

@@ -1,15 +1,19 @@
 <template lang="pug">
 nav.brown1
-  a
+  <router-link to="/">
     img.circle(src="../assets/inbox-agency.jpg" title="Home")
+  </router-link>
+  h5 Inbox Agency
   div.max
-  a
-    i(title="Home") home
-  a
+  <router-link to="/shop">
     i(title="Shop") checkroom
-  a
+  </router-link>
+  <router-link to="/cart">
     i(title="Checkout") shopping_cart
-  
+  </router-link>
+  <router-link to="/user">
+    i(title="User") person
+  </router-link>
 </template>
 
 <script>
