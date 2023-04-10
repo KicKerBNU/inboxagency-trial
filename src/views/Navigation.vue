@@ -6,19 +6,21 @@ nav.brown1
   h5 Inbox Agency
   div.max
   <router-link to="/shop">
-    i(title="Shop") checkroom
+      i(title="Shop") checkroom
   </router-link>
-  <router-link to="/cart">
-    i(title="Checkout") shopping_cart
+  <router-link to="/checkout">
+    a
+      span.badge.circle(v-if="store.cart.items.length") {{ store.cart.items.length  }}
+      i(title="Checkout") shopping_cart
   </router-link>
   <router-link to="/user">
     i(title="User") person
   </router-link>
 </template>
 
-<script>
-
-
+<script setup>
+import { ref } from 'vue'
+import store from '../store/index.js';
 </script>
 
 <style scoped>

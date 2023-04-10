@@ -1,5 +1,5 @@
 <template lang="pug">
-div.padding(v-if="categories").grid    
+div.padding(v-if="categories").grid
     div(v-for="(category, index) in categories" :key="category.id" :class="index < 3 ? 's4' : 's6'")
         article.no-padding(v-if="index < 4")
             img.responsive.medium(:src="category.imageUrl" :alt="category.title")
